@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S $CFILE
+gcc -g -Wa, -adhln -fverbose-asm  $CFILE
