@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -g -Wa, -adhln -fverbose-asm  $CFILE
+gcc -S -masm=intel -Og -fverbose-asm $CFILE
