@@ -22,7 +22,7 @@ int main(void)
 				       	continue;
 				for (l = 0 ; l <= 9 ; l++)
 				{
-					if (l < k || l == k == j == i )
+					if (l < k || ( l == k ) && (k == j) && (j == i))
 						continue;
 					if (ok)
 					{
