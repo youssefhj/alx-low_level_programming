@@ -14,15 +14,11 @@ int main(void)
 	{
 		for (j = 0 ; j <= 9 ; j++)
 		{
-			if (j < i)
-				continue;
 			for (k = 0 ; k <= 9 ; k++)
 			{
-				if (k < j)
-				       	continue;
 				for (l = 0 ; l <= 9 ; l++)
 				{
-					if (l < k || ( l == k  && k == j && j == i))
+					if (i > l &&  i == j && j == k)
 						continue;
 					if (ok)
 					{
