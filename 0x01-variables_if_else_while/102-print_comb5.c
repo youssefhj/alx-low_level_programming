@@ -20,7 +20,7 @@ int main(void)
 				{
 					if (i == j && j == k)
 						continue;
-					if(i == j && j == k && i == 0)
+					if(i == k && k == l && i == 0)
 						continue;
 					if (ok)
 					{
