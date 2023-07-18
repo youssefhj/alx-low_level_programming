@@ -1,3 +1,4 @@
+#include "main.h"
 
 /**
  * print_alphabet - display all literal alphabet
