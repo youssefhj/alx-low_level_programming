@@ -20,11 +20,11 @@ void jack_bauer(void)
 			else
 			{
 				k = i % 10;
-				l = i - k;
+				l = i / k;
 				l = l % 10;
 
-				_putchar(l);
-				_putchar(k);
+				_putchar(l + '0');
+				_putchar(k + '0');
 			}
 			_putchar(':');
 		
@@ -36,11 +36,11 @@ void jack_bauer(void)
 			else
 			{
 				k = j % 10;
-				l = j - k;
+				l = j / k;
 				l = l % 10;
 
-				_putchar(l);
-				_putchar(k);
+				_putchar(l + '0');
+				_putchar(k + '0');
 			}
 			_putchar('\n');
 		}
