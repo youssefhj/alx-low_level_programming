@@ -3,7 +3,7 @@
 /**
  * print_sign - print the sign of n
  * @n: input number
- * Return: 1 (n < 0) ,0 (n = 0) , -1 otherwize 
+ * Return: 1 (n < 0) ,0 (n = 0) , -1 otherwize
  */
 int print_sign(int n)
 {
@@ -19,5 +19,4 @@ int print_sign(int n)
 	}
 	_putchar('-');
 	return (-1);
-
 }
