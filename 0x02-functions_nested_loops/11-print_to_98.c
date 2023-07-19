@@ -33,7 +33,6 @@ void print_to_98(int n)
 			_putchar('-');
 		}
 
-		// putchar the number 
 		display_number(tmp);	
 		
 		if (i != 98)
