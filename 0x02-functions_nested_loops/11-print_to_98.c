@@ -11,7 +11,7 @@ void display_number(int n)
 		_putchar(n + '0');
 		return;
 	}
-	dipsay_number((n - (n % 10)) / 10);
+	display_number((n - (n % 10)) / 10);
 	_putchar((n % 10) + '0');
 }
 
