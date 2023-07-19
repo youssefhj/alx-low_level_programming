@@ -6,7 +6,7 @@
  */
 void display_number(int n)
 {
-	if (n < 9)
+	if (n <= 9)
 	{
 		_putchar(n + '0');
 		return;
