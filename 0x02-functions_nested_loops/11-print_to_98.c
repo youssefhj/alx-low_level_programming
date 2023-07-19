@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * diplay_number - display
+ * display_number - display
  * @n: input number
  */
 void display_number(int n)
@@ -22,7 +22,7 @@ void display_number(int n)
 void print_to_98(int n)
 {
 	int i, tmp;
-	
+
 	i = n;
 	while (1)
 	{
@@ -34,14 +34,13 @@ void print_to_98(int n)
 			_putchar('-');
 		}
 
-		display_number(tmp);	
-		
+		display_number(tmp);
+
 		if (i != 98)
 		{
 			_putchar(',');
-			_putchar(' ');		
+			_putchar(' ');
 		}
-			
 
 		if (i == 98)
 			break;
