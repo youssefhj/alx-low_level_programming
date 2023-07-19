@@ -27,7 +27,8 @@ void print_to_98(int n)
 	while (1)
 	{
 
-		if ( i < 0)
+		tmp = i;
+		if (i < 0)
 		{
 			tmp = -i;
 			_putchar('-');
