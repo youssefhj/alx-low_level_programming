@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
- * print_diagonal - print n \
+ * print_diagonal - print n backslash
  * @n: input
  */
 void print_diagonal(int n)
 {
 	int i, j;
 
-	if(n <= 0)
+	if (n <= 0)
 	{
 		_putchar('\n');
 		return;
-	}	
-	
+	}
+
 	j = 0;
 	while (j < n)
 	{
