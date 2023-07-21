@@ -14,15 +14,9 @@ void print_square(int size)
 		return;
 	}
 
-	for (s = 1, l = 1 ; s <= size * size ; s++, l++)
-	{
-		_putchar('#');
-		if (l == size && size != 1)
-		{
-			_putchar('\n');
-			l = 0;
-		}
+	for (s = 1 ; s <= size ; s++)
+		for (l = 1 ; l <= size ; l++)
+			_putchar('#');
 
-	}
 	_putchar('\n');
 }
