@@ -8,7 +8,6 @@
 void print_rev(char *s)
 {
 	char *ps;
-	int len;
 
 	for (ps = s + _strlen(s) - 1 ; ps >= s ; ps--)
 		_putchar(*ps);
