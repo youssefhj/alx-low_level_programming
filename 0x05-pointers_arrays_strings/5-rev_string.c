@@ -13,7 +13,7 @@ void rev_string(char *s)
 	for (pi = s ; *pi != '\0' ; pi++)
 		;
 
-	len = ps - s;
+	len = pi - s;
 
 	for (pi = s, pf = s + len - 1 ; *pi > *pf ; pi++, pf--)
 		*pi = *pf;
