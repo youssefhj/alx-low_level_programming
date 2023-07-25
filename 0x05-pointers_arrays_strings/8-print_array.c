@@ -8,8 +8,8 @@ void print_num_rec(int n)
 {
 	if (n != 0)
 	{
-		_putchar((n % 10) + '0');
 		print_num_rec(n / 10);
+		_putchar((n % 10) + '0');
 	}
 }
 
