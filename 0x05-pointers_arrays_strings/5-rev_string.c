@@ -16,9 +16,9 @@ void rev_string(char *s)
 
 	len = pi - s;
 
-	for (pi = s, pf = s + len - 1 ; *pi > *pf ; pi++, pf--)
+	for (pi = s, pf = s + len - 1 ; pi <= pf ; pi++, pf--)
 	{
-		tmp = *pi ;
+		tmp = *pi;
 		*pi = *pf;
 		*pf = tmp;
 	}
