@@ -7,18 +7,15 @@
 
 void rev_string(char *s)
 {
-	char *ps;
+	char *pi, *pf;
 	int len;
 
-	for (ps = s ; *ps != '\0' ; ps++)
+	for (pi = s ; *pi != '\0' ; pi++)
 		;
 
 	len = ps - s;
 
-	for (ps = s + len - 1 ; ps >= s ; ps--)
-		_putchar(*ps);
-
-	_putchar('\n');
-
+	for (pi = s, pf = s + len - 1 ; *pi > *pf ; pi++, pf--)
+		*pi = *pf;
 
 }
