@@ -13,6 +13,8 @@ void puts2(char *str)
 	{
 		_putchar(*pstr);
 		pstr++;
+		if (*pstr == '\0')
+			break;
 	}
 	_putchar('\n');
 }
