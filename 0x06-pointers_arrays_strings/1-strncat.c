@@ -16,7 +16,7 @@ char *_strncat(char *dest, char *src, int n)
 		;
 
 	size = 0;
-	while (size < n)
+	while (src[size] != '0' && size < n)
 	{
 		*pdest = src[size];
 		pdest++;
