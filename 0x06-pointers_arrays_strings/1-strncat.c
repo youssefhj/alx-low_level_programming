@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strcat - append stc to dest
+ * _strncat - append stc to dest
  * @dest: pointer to destination memory
  * @src: pointer to source memory
  * @n: n caracter
