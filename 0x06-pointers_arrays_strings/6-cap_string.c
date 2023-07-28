@@ -25,8 +25,6 @@ int is_spetial_caracter(char c)
 char *cap_string(char *s)
 {
 	char *ps;
-	int is_first_caracter;
-
 
 	if (*s >= 'a' && *s <= 'z')
 		*s -= 32;
