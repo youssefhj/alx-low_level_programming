@@ -7,17 +7,20 @@
  */
 char *leet(char *s)
 {
-	char *ps;
-	char *s1 = "ol ea  t";
-	char *s2 = "OL EA  T";
 	int i;
+	char *ps;
+	char *s1 = "oOlLeEaAtT";
+	char *s2 = "0011334477";
 
 	for (ps = s ; *ps != '\0' ; ps++)
 	{
-		for (i = 0 ; i <= 7 ; i++)
+		for (i = 0 ; i <= 9 ; i++)
 		{
-			if ((*ps == s1[i] || *ps == s2[i]) && s1[i] != ' ')
-				*ps = i;
+			if (*ps == s1[i])
+			{
+				*ps = s2[i];
+				break;
+			}
 		}
 	}
 	return (s);
