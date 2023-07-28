@@ -8,9 +8,9 @@
 int is_spetial_caracter(char c)
 {
 	char array_caracter[] = {',', ';', '.', '!', '?', '"', '(',
-		')', '{', '}', '\t', '\n', ' '};
+		')', '{', '}', ' '};
 
-	for (i = 0 ;  i <= 12 ; i++)
+	for (i = 0 ;  i <= 10 ; i++)
 		if (c == array_caracter[i])
 			return (1);
 
@@ -32,10 +32,8 @@ char *cap_string(char *s)
 	for (ps = s + 1 ; *ps != '\0' ; ps++)
 	{
 		if (*ps >= 'a' && *ps <= 'z')
-		{
 			if (is_spetial_caracter(*(ps - 1)))
 					*ps -= 32;
-		}
 	}
 	return (s);
 }
