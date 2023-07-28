@@ -33,7 +33,7 @@ char *cap_string(char *s)
 	{
 		if (*ps >= 'a' && *ps <= 'z')
 			if (is_spetial_caracter(*(ps - 1)))
-					*ps -= 32;
+				*ps -= 32;
 	}
 	return (s);
 }
