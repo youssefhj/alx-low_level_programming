@@ -12,9 +12,6 @@ char *_memset(char *s, char b, unsigned int n)
 {
 	char *ps;
 
-	if (s == NULL)
-		return (s);
-
 	for (ps = s ; *ps != '\0' && n > 0 ; ps++, n--)
 		*ps = b;
 
