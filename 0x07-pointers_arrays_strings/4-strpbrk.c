@@ -8,26 +8,12 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	char *min_location, *max_location;
-	int i, j, len;
+	int i, j;
 
-	len = 0;
 	for (i = 0 ; s[i] != '\0' ; i++)
-		le++;
+		for (j = 0 ; accept[j] != '\0' ; j++)
+			if (accept[j] == s[i])
+				return (s + i);
 
-	max_location = s + len - 1;
-	for (i = 0 ; accept[i] != '\0' ; i++)
-	{
-		for (j = 0 ; s[j] != '\0' ; j++)
-		{
-			if (accept[i] == s[j])
-			{
-				min_location = s + j;
-				if (min_location < max_location)
-					max_location = min_location;
-			}
-		}
-	}
-
-	return (min_location);
+	return ('\0');
 }
