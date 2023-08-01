@@ -2,7 +2,7 @@
 
 /**
  * _strstr - location o needle in hystack
- * @hystack: string
+ * @haystack: string
  * @needle: strin
  * Return: pointer to substring
  */
@@ -15,15 +15,13 @@ char *_strstr(char *haystack, char *needle)
 		k = i;
 		for (j = 0 ; needle[j] != '\0' ; j++)
 		{
-			if(needle[j] == haystack[k])
+			if (needle[j] == haystack[k])
 				k++;
 			else
 				break;
-					
 		}
-		if(needle[j] == '\0')
+		if (needle[j] == '\0')
 			return (haystack + i);
 	}
 	return ('\0');
-	
 }
