@@ -22,7 +22,7 @@ unsigned int _strspn(char *s, char *accept)
 				ok = 1;
 			}
 		}
-		if (count == 0)
+		if (ok == 0)
 			break;
 	}
 	return (count);
