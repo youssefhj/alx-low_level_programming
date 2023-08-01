@@ -8,7 +8,7 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	char *min_location, max_location;
+	char *min_location, *max_location;
 	int i, j, len;
 
 	len = 0;
