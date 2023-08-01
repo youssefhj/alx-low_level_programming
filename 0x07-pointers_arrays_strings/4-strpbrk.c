@@ -22,11 +22,9 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (accept[i] == s[j])
 			{
+				min_location = s + j;
 				if (min_location < max_location)
-				{
-					min_location = s + j;
 					max_location = min_location;
-				}
 			}
 		}
 	}
