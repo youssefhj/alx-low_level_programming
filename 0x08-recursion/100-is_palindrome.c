@@ -36,7 +36,6 @@ int check(char *s1, char *s2)
 int is_palindrome(char *s)
 {
 	int len;
-	char *ps;
 
 	len = length_rec(s);
 	return (check(s, s + len - 1));
