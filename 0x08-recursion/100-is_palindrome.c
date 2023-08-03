@@ -9,7 +9,7 @@ int length_rec(char *s)
 {
 	if (*s == '\0')
 		return (0);
-	return (1 + length(++s));
+	return (1 + length_rec(++s));
 }
 /**
  * check - check if i caracter is equle to i + len caracter
