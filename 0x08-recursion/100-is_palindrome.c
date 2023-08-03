@@ -1,6 +1,17 @@
 #include "main.h"
 
 /**
+ * length_rec - len of s
+ * @s: string
+ * Return: len of s
+ */
+int length_rec(char *s)
+{
+	if (*s == '\0')
+		return (0);
+	return (1 + length(++s));
+}
+/**
  * check - check if i caracter is equle to i + len caracter
  * @s1: string
  * @s2: string
@@ -27,10 +38,7 @@ int is_palindrome(char *s)
 	int len;
 	char *ps;
 
-	for (ps = s; *ps != '\0'; ps++)
-		;
-
-	len = ps - s;
+	len = length_rec(s);
 	return (check(s, s + len - 1));
 
 }
