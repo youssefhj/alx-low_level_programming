@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - Entry point
@@ -15,5 +14,5 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	return (atoi(argv[1]) * atoi(argv[2]));
+	return (argv[1] * argv[2]);
 }
