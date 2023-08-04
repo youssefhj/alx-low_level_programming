@@ -1,11 +1,12 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * whatsmyname - Entry point
+ * main - Entry point
  * @argc: len of arguments
  * @argv: array of arguments
  */
-void whatsmyname(int argc, char *argv[])
+void main(int argc, char *argv[])
 {
 	int i;
 
