@@ -31,9 +31,10 @@ int main(int argc, char *argv[])
 {
 	if (argc < 3)
 	{
-		fprintf(stderr, "Error\n");
+		printf("Error\n");
 		return (1);
 	}
 
-	return (to_integer(argv[1]) * to_integer(argv[2]));
+	printf("%d\n", to_integer(argv[1]) * to_integer(argv[2]));
+	return (0);
 }
