@@ -60,7 +60,6 @@ int check(int ac, char *av[])
 		{
 			if (av[i][j] < '0' && av[i][j] > '9')
 			{
-				printf("Error\n");
 				return (1);
 			}
 		}
@@ -76,7 +75,7 @@ int check(int ac, char *av[])
  */
 int main(int argc, char *argv[])
 {
-	int sum, i, j;
+	int sum, i;
 
 	if (argc == 1)
 	{
