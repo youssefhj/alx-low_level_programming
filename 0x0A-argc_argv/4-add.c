@@ -93,6 +93,6 @@ int main(int argc, char *argv[])
 	for (i = 0 ; i < argc ; i++)
 		sum += to_integer(argv[i]);
 
-	printf("%s\n", sum);
+	printf("%d\n", sum);
 	return (0);
 }
