@@ -15,6 +15,8 @@ int _length(char *nb)
 		len++;
 		i++;
 	}
+	if(nb[0] == '-') 
+		len--;
 
 	return (len);
 }
@@ -33,10 +35,13 @@ int to_integer(char *nb)
 	i = _length(nb) - 1;
 	while (i >= 0)
 	{
-		integer = integer + ((nb[i] - '0') * p);
+		if(nb[0] != '-')
+			integer = integer + ((nb[i] - '0') * p);
 		p *= 10;
 		i--;
 	}
+	if (nb[0] == '-')
+		integer *= -1;
 	return (integer);
 }
 
