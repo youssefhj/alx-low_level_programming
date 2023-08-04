@@ -6,7 +6,7 @@
  * @argc: len of arguments
  * @argv: array of arguments
  */
-void main(int argc, char *argv[])
+void main(__attribute__((unused))int argc, char *argv[])
 {
 	int i;
 
