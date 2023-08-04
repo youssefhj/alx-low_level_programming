@@ -1,21 +1,41 @@
 #include <stdio.h>
 
 /**
+ * _length - len of nb
+ * @nb: string
+ * Return: len
+ */
+int _length(char *nb)
+{
+	int i, len;
+
+	i = len = 0;
+	while (nb[i] != '\0')
+	{
+		len++;
+		i++;
+	}
+
+	return (len);
+}
+/**
  * to_integer - convert nb to integer
  * @nb: string number
  * Return: interger
  */
 int to_integer(char *nb)
 {
-	int integer, p;
+	int integer, p, i;
 
 	p = 1;
 	integer = 0;
-	while (nb)
+
+	i = _length(nb) - 1;
+	while (i >= 0)
 	{
-		integer = integer + ((*nb - '\0') * p);
+		integer = integer + ((nb[i] - '0') * p);
 		p *= 10;
-		nb++;
+		i--;
 	}
 	return (integer);
 }
