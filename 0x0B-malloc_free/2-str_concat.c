@@ -13,7 +13,7 @@ char *str_concat(char *s1, char *s2)
 	int lens1, lens2, i;
 
 	if (s1 == NULL && s2 == NULL)
-		return (' ');
+		return ("");
 
 
 	lens1 = lens2 = 0;
