@@ -9,8 +9,15 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	if (size == 0)
-		return (NULL);
+	char *ps, *tmp;
 
-	return (malloc(sizeof(c) * size));
+	ps = NULL;
+	if (size == 0)
+		return (ps);
+
+	ps = malloc(sizeof(char) * size);
+	for (tmp = ps ; tmp < ps + size ; tmp++)
+		*tmp = c;
+
+	return (ps);
 }
