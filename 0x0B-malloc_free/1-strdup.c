@@ -9,21 +9,20 @@
 char *_strdup(char *str)
 {
 	int lenstr, i;
-	char *nstr, *pstr, *pnstr;
+	char *nstr;
 
 	if (str == NULL)
 		return (NULL);
 
 	lenstr = 0;
 	for (i = 0 ; str[i] != '\0'; i++)
-		lenstr++;
 
 	nstr = malloc(sizeof(char) * (lenstr + 1));
 	if (nstr != NULL)
 	{
-		for (pnstr = nstr, pstr = str ; pnstr < str + lenstr ; pstr++, pnstr++)
-			*pnstr = *pstr;
-		*pnstr = '\0';
+		for (i = 0 ; str[i] != '\0' ; i++)
+			nstr[i] = str[i];
+		nstr[i] = '\0';
 
 	}
 	return (nstr);
