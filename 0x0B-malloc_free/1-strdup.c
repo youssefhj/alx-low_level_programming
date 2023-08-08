@@ -26,15 +26,5 @@ char *_strdup(char *str)
 		*pnstr = '\0';
 
 	}
-	str = malloc(sizeof(char) * (lenstr + 1));
-	if (str != NULL)
-	{
-		for (pnstr = nstr, pstr = str; pnstr < str + lenstr ; pstr++, pnstr++)
-			*pstr = *pnstr;
-
-		*pstr = '\0';
-	}
-
-	free(nstr);
-	return (str);
+	return (nstr);
 }
