@@ -13,13 +13,13 @@ int **alloc_grid(int width, int height)
 	int **matrix, **pmatrix;
 	int l, c;
 
-	matrix = (int **) malloc(sizeof(int **) * height);
+	matrix = (int **) malloc(sizeof(int *) * height);
 
 	if (matrix == NULL)
 		return (NULL);
 
 	for (pmatrix = matrix ; pmatrix < matrix + height ; pmatrix++)
-		*pmatrix = (int *) malloc(sizeof(int *) * width);
+		*pmatrix = (int *) malloc(sizeof(int) * width);
 
 	for (l = 0 ; l < height ; l++)
 		for (c = 0 ; c < width ; c++)
