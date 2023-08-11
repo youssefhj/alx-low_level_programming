@@ -40,13 +40,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len2 = n;
 
 	str = (char *) malloc(len1 + len2 + 1);
-	if (s1 == NULL)
+	if (str == NULL)
 		return (NULL);
 
 	for (i = 0 ; s1[i] != '\0' ; i++)
 		str[i] = s1[i];
 
-	for (j = 0; j < n ; j++)
+	for (j = 0; j < len2 ; j++)
 	{
 		str[i] = s2[j];
 		i++;
