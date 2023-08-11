@@ -10,9 +10,6 @@ unsigned int _strlen(char *str)
 {
 	int len;
 
-	if (str == NULL)
-		return (0);
-
 	for (len = 0; str[len] != '\0' ; len++)
 		;
 
@@ -28,26 +25,31 @@ unsigned int _strlen(char *str)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j, len1, len2;
+	char *str;
+	unsigned int i, len1, len2;
+
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
 
-	if (len1 == 0 && len2 == 0)
-		return (NULL);
-
-	if (n < len2)
-		len2 = n;
-
-	s1 = (char *) realloc(s1, len1 + len2 + 1);
+	str = (char *) realloc(s1, len1 + n + 1);
 	if (s1 == NULL)
 		return (NULL);
 
-	for (i = len1, j = 0 ; i < len1 + len2 + 1 ; i++, j++)
-		s1[i] = s2[j];
+	for (i = 0 ; s1[i] != '\0' ; i++)
+		str[i] = s1[i];
 
-	s[i] = '\0';
-	return (s1);
+	for (j = 0; s2[j] != '\0' ; j++)
+	{
+		str[i] = s2[j];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 
 
 }
