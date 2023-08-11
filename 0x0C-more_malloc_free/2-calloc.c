@@ -18,5 +18,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (vp == NULL)
 		return (NULL);
 
+	while (nmemb)
+	{
+		vp[nmemb -1] = 0;
+		nmemb--;
+	}
 	return (vp);
 }
