@@ -9,7 +9,7 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *vp;
+	int *vp;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -19,6 +19,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	while (nmemb--)
-		(int *)vp[nmemb] = 0;
-	return (vp);
+		vp[nmemb] = 0;
+
+	return ((void *)vp);
 }
