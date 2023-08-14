@@ -23,8 +23,10 @@ int _strlen(char *str)
  *
  * @dest: destination string
  * @src: source string
+ *
+ * Return: pointer to a char
  */
-void _strcpy(char *dest, char *src)
+char* _strcpy(char *dest, char *src)
 {
 	int i;
 
@@ -55,24 +57,24 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	dog->name = (char *)malloc(_strlen(name) + 1);
-	if (!dog->name)
+	if (dog->name == NULL)
 	{
 		free(dog);
 		return (NULL);
 	}
 
-	_strcpy(dog->name, name);
-
-	dog->age = age;
 
 	dog->owner = (char *)malloc(_strlen(owner + 1);
-	if (!dog->owner)
+	if (dog->owner == NULL)
 	{
 		free(dog->name);
 		free(dog);
 		return (NULL);
 	}
-	_strcpy(dog->owner, owner);
+
+	dog->name = _strcpy(dog->name, name);
+	dog->owner =_strcpy(dog->owner, owner);
+	dog->age = age;
 
 	return (dog);
 }
