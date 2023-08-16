@@ -1,13 +1,11 @@
 #include "function_pointers.h"
 
 /**
- * array_iterator - itrate the array
+ * array_iterator - iterate the array
  *
  * @array: array
  * @size: size of array
  * @action: pointer to function
- *
- * Return: Nothing
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
