@@ -4,6 +4,7 @@
 /**
  * sum_them_all - sum all arguments
  * @n: size of arguments
+ * @...: list arguments
  *
  * Return: sum
  */
