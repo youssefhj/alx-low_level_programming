@@ -14,7 +14,7 @@ unsigned int _strlen(char *str)
 	if (str == NULL)
 		return (0);
 
-	for (len = 0 ; str != '\0' ; len++)
+	for (len = 0 ; str[len] != '\0' ; len++)
 		;
 
 	return (len);
@@ -27,14 +27,12 @@ unsigned int _strlen(char *str)
  */
 size_t print_list(const list_t *h)
 {
-	list_h *ph = NULL;
 	size_t node = 0;
 
-	ph = h;
-	while (ph)
+	while (h)
 	{
-		printf("[%lu] %s\n", _strlen(ph->str), ph->str ? ph->str : "(nil)");
-		ph = ph->next;
+		printf("[%u] %s\n", _strlen(h->str), h->str ? h->str : "(nil)");
+		h = h->next;
 		node++;
 	}
 
