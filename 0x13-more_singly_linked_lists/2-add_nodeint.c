@@ -15,17 +15,18 @@ listint_t *add_nodeint(listint_t **head, const int n)
 
 	node = (listint_t *)malloc(sizeof(listint_t));
 	if (node == NULL)
-		return (*head);
+		return (NULL);
 
 	node->n = n;
 	node->next = NULL;
+	
 	if (*head == NULL)
-		return (node);
+		*head = node;
+	else {
+		ph = *head;
+		*head = node;
+		node->next = ph;
+	}
 
-	ph = *head;
-	*head = node;
-	node->next = ph;
-
-
-	return (*head);
+	return (node);
 }
