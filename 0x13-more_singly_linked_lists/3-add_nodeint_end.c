@@ -1,13 +1,13 @@
 #include "lists.h"
 
 /**
- * add_nodeint - add node in the begining
+ * add_nodeint_end - add node in the end
  * @head: the head of the list
  * @n: data
  *
  * Return: the added node
  */
-listint_t *add_nodeint(listint_t **head, const int n)
+listint_t *add_nodeint_end(listint_t **head, const int n)
 {
 	listint_t *ph, *node;
 
@@ -25,8 +25,10 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	else
 	{
 		ph = *head;
-		*head = node;
-		node->next = ph;
+		while (ph)
+			ph = ph->next;
+
+		ph = node;
 	}
 
 	return (node);
