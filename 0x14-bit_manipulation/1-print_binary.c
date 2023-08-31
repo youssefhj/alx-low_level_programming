@@ -14,7 +14,7 @@ void print_binary(unsigned long int n)
 
 	while (bitsize)
 	{
-		if (n & 1L << --bit)
+		if (n & 1L << --bitsize)
 		{
 			_putchar('1');
 			
