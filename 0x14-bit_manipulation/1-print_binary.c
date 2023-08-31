@@ -9,17 +9,20 @@
 
 void print_binary(unsigned long int n)
 {
-	int binary = sizeof(n) * 8;
+	int bitsize = sizeof(n) * 8;
 	int can_print = 0;
 
-	while (binary)
+	while (bitsize)
 	{
-		if (n & 1L << --binary)
+		if (n & 1L << --bit)
 		{
 			_putchar('1');
+			
 			can_print = 1;
 		}
 		else if (can_print)
 			_putchar('0');
 	}
+	if (!can_print)
+		_putchar('0');
 }
