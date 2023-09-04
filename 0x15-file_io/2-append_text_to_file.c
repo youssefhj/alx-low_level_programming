@@ -1,6 +1,25 @@
 #include "main.h"
 
 /**
+ * _strlen - string length
+ * @str: string
+ *
+ * Return: lengthg of str
+ */
+unsigned int _strlen(char *str)
+{
+	unsigned int len;
+
+	if (str == NULL)
+		return (0);
+
+	for (len = 0; str[len] != '\0'; len++)
+		;
+
+	return (len);
+}
+
+/**
  * append_text_to_file - append text to the end of the file
  * @filename: file name
  * @text_content: texte content
