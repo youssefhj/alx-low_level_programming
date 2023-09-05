@@ -5,11 +5,11 @@
  * @ac: number of parameters
  * @av: list of parameters
  *
- * Return: void
+ * Return: 0 success
  */
-void main(int ac, char *av[])
+int main(int ac, char *av[])
 {
-	int src_fd, dest_fd;
+	int src_fd, dest_fd, letters;
 	char buf[1025];
 
 	if (ac < 3)
@@ -21,13 +21,14 @@ void main(int ac, char *av[])
 	src_fd = open(av[1], O_RDONLY);
 	dest_fd = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
-	if (src_fd == -1 || read(src_fd, buf, 1024) == -1)
+	letters = read(src_fd, buf, 1024);
+	if (src_fd == -1 || letters  == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 
-	if (dest_fd == -1 || write(dest_fd, buf, 1024) == -1)
+	if (dest_fd == -1 || write(dest_fd, buf, letters) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
@@ -44,4 +45,6 @@ void main(int ac, char *av[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest_fd);
 		exit(100);
 	}
+
+	return (0);
 }
