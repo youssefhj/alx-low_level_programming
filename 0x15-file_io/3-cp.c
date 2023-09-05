@@ -14,7 +14,7 @@ int main(int ac, char *av[])
 
 	if (ac < 3)
 	{
-		dprintf(STDOUT_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
