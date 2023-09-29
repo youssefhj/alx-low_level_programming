@@ -16,25 +16,6 @@ unsigned int power(unsigned int b, unsigned int e)
 }
 
 /**
- * is_binary - testing of binary number
- * @b: binary number
- *
- * Return: 0 failed 1 success
- */
-int is_binary(const char *b)
-{
-	int c;
-
-	for (c = 0 ; b[c] != '\0' ; c++)
-	{
-		if (b[c] != '0' && b[c] != '1')
-			return (0);
-	}
-
-	return (1);
-}
-
-/**
  * binary_to_uint - convert binary number to an int
  * @b: binary number
  *
@@ -45,7 +26,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int nb, puissance;
 	int c;
 
-	if (b == NULL || is_binary(b) == 0)
+	if (b == NULL)
 		return (0);
 
 	for (c = 0; b[c] != '\0' ; c++)
@@ -54,6 +35,9 @@ unsigned int binary_to_uint(const char *b)
 	nb = puissance = 0;
 	for (c = c - 1 ; c >= 0 ; c--)
 	{
+		if (b[c] < '0' || b[c] > '1')
+			return (0);
+
 		if (b[c] == '1')
 			nb = nb + power(2, puissance);
 
