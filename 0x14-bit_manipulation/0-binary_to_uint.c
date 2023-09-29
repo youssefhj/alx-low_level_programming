@@ -21,7 +21,7 @@ unsigned int power(unsigned int b, unsigned int e)
  *
  * Return: 0 failed 1 success
  */
-int is_binary(char *b)
+int is_binary(const char *b)
 {
 	int c;
 
