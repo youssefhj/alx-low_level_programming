@@ -12,12 +12,12 @@ void print_binary(unsigned long int n)
 
 	while (size)
 	{
-		if (n & 1)
+		if (n & 1L)
 			_putchar('1');
 		else
 			_putchar('0');
 
-		n = n >> 1;
+		n = n << 1;
 		size--;
 	}
 }
