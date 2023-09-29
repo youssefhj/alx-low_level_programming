@@ -13,7 +13,7 @@ void print_binary(unsigned long int n)
 
 	if (n == 0)
 	{
-		printf("0");
+		_putchar('0');
 		return;
 	}
 
@@ -21,11 +21,11 @@ void print_binary(unsigned long int n)
 	{
 		if ((n >> bits) & 1L)
 		{
-			printf("1");
+			_putchar('1');
 			ok = 1;
 		}
 		else if (ok != 0)
-			printf("0");
+			_putchar('0');
 
 	}
 }
