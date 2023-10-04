@@ -13,7 +13,7 @@ unsigned int _strlen(char *str)
 	if (str == NULL)
 		return (0);
 
-	for (len = 0 ; str[len] != '\0'; len++)
+	for (len = 0 ; str[len] != '\0' ; len++)
 		;
 
 	return (len);
@@ -33,15 +33,17 @@ int create_file(const char *filename, char *text_content)
 	if (!filename)
 		return (-1);
 
-	fd = open(fd, O_CREAT | O_RDONLY | O_TRUNC, 0600);
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
 	if (fd == -1)
 		return (-1);
-
-	len = write(fd, text_content, _strlen(text_content));
-	if (len == -1)
-		return (-1);
-
+	
+	if (text_content != NULL)
+	{
+		len = write(fd, text_content, _strlen(text_content));
+		if (len == -1)
+			return (-1);
+	}
 	close(fd);
 	return (1);
 }
