@@ -13,7 +13,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *buf;
 	ssize_t lenr, lenw;
 
-	buf = (char *)malloc(letters + 1);
 
 	if (filename == NULL)
 		return (0);
@@ -22,7 +21,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1)
 		return (0);
 
-	lenr = read(fd, buf, letters);
+	buf =(char *)malloc(letters + 1);
+
+	lenr = read(fd, buf, letters + 1);
 	if (lenr == -1)
 		return (0);
 
