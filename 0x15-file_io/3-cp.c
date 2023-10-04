@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int fdr, fdw;
-	char buf[1025];
+	char buf[1024];
 	ssize_t len;
 
 	if (argc < 3)
