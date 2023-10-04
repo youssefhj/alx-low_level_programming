@@ -11,7 +11,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	char *buf;
-	ssize_t lenr, lenw;
 
 
 	if (filename == NULL)
@@ -23,14 +22,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	buf = (char *)malloc(letters + 1);
 
-	lenr = read(fd, buf, letters);
-	if (lenr == -1)
+	if ((letters = read(fd, buf, letters)) == -1)
 		return (0);
 
-	buf[len + 1] = '\0';
-
-	lenw = write(1, buf, lenr);
-	if (lenw != lenr)
+	if (write(1, buf, letters) == -1)
 		return (0);
 
 	free(buf);
