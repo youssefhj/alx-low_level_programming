@@ -1,6 +1,6 @@
 #include "main.h"
 
-#define ERR_READ "Error: Can;t read from file %s\n"
+#define ERR_READ "Error: Can't read from file %s\n"
 #define ERR_WRITE "Error: Can't write to %s\n"
 #define ERR_CLOSE "Error: Can't close fd %d\n"
 
