@@ -18,46 +18,23 @@ int main(int argc, char *argv[])
 	char buf[READ_SIZE];
 
 	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	f_fd = open(argv[1], O_RDONLY);
 	if (f_fd == -1)
-	{
-		dprintf(STDERR_FILENO, ERR_READ, argv[1]);
-		exit(98);
-	}
+		dprintf(STDERR_FILENO, ERR_READ, argv[1]), exit(98);
 	t_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (t_fd == -1)
-	{
-		dprintf(STDERR_FILENO, ERR_WRITE, argv[2]);
-		exit(99);
-	}
+		dprintf(STDERR_FILENO, ERR_WRITE, argv[2]), exit(99);
 	while ((b = read(f_fd, bug, READ_SIZE)) > 0)
-	{
 		if (write(t_fd, buf, b) != b)
-		{
-			dprintf(STDERR_FILENO, ERR_WRITE, argv[2]);
-			exit(99);
-		}
-	}
+			dprintf(STDERR_FILENO, ERR_WRITE, argv[2]), exit(99);
 	if (b == -1)
-	{
-		dprintf(STDERR_FILENO, ERR_READ, argv[1]);
-		exit(98);
-	}
+		dprintf(STDERR_FILENO, ERR_READ, argv[1]), exit(98);
 	f_fd = close(f_fd);
 	t_fd = close(t_fd);
 	if (f_fd)
-	{
-		dprintf(STDERR_FILENO, ERR_CLOSE, f_fd);
-		exit(100);
-	}
+		dprintf(STDERR_FILENO, ERR_CLOSE, f_fd), exit(100);
 	if (t_fd)
-	{
-		dprintf(STDERR_FILENO, ERR_CLOSE, t_fd);
-		exit(100);
-	}
+		dprintf(STDERR_FILENO, ERR_CLOSE, t_fd), exit(100);
 	return (EXIT_SUCCESS);
 }
