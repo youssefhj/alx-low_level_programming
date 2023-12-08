@@ -5,7 +5,7 @@
  * @head: head of the list
  * @n: data
  *
- * Return: on sucees the head of the node or NULL on failure
+ * Return: on success the new element or NULL on failure
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
@@ -29,5 +29,5 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	p->next = node;
 	node->prev = p;
 
-	return (*head);
+	return (node);
 }
