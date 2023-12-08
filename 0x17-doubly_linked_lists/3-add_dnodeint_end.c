@@ -17,10 +17,10 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	node->prev = NULL;
 	node->next = NULL;
 
-	if (node == NULL)
-		return (NULL);
+	if (head == NULL || node == NULL)
+		return (node ? free(node), NULL : NULL);
 
-	if (head == NULL || *head == NULL)
+	if (*head == NULL)
 		return (*head = node);
 
 	while (p->next)
