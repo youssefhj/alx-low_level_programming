@@ -8,7 +8,7 @@
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-	dlistint_t *p = h;
+	const dlistint_t *p = h;
 	size_t node = 0;
 
 	if (p == NULL)
