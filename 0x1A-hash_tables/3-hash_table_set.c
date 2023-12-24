@@ -5,13 +5,15 @@
  * @key: key
  * @value: value
  *
- * Return: 1 success 0 otherwise
+ * Return: NULL on failure
  */
-int create_hash_node(hash_node_t *node, const char *key, const char *value)
+hash_node_t *create_hash_node(const char *key, const char *value)
 {
+	hash_node_t *node;
+
 	node = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (node == NULL)
-		return (0);
+		return (NULL);
 
 	node->key = strdup(key);
 	node->value = strdup(value);
@@ -19,11 +21,11 @@ int create_hash_node(hash_node_t *node, const char *key, const char *value)
 	if (node->key == NULL || node->value == NULL)
 	{
 		free(node);
-		return (0);
+		return (NULL);
 	}
 
 	node->next = NULL;
-	return (1);
+	return (node);
 }
 
 /**
@@ -38,7 +40,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int idx;
 	hash_node_t *node, *ptr;
-	const char *nw_value;
+	char *nw_value;
 
 	if (ht == NULL || ht->array == NULL || ht->size == 0 ||
 		key == NULL || strlen(key) == 0 || value == NULL)
@@ -62,7 +64,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ptr = ptr->next;
 	}
 
-	if (create_hash_node(node, key, value) == 0)
+	node = create_hash_node(key, value);
+	if (node == NULL)
 		return (0);
 
 	node->next = ht->array[idx];
