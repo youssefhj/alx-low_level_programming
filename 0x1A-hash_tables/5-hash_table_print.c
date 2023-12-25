@@ -11,7 +11,7 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int idx;
 	hash_node_t *ptr;
 	int ok = 0;
-	
+
 	if (ht == NULL || ht->array == NULL)
 		return;
 
@@ -25,9 +25,8 @@ void hash_table_print(const hash_table_t *ht)
 				printf(", ");
 
 			printf("'%s': '%s'", ptr->key, ptr->value);
-			if (ptr->next != NULL)
-				printf(", ");
-			
+			printf(", ");
+
 			ok = 1;
 			ptr = ptr->next;
 		}
